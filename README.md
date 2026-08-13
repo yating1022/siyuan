@@ -1,15 +1,40 @@
-<h1 align="center">🌀 easy-vitepress-blog 🏖️</h1>
+# 🍎 Fruits Blog
 
-基于 VitePress 快速搭建个人博客，自动化路由处理并预置了更加丰富的页面。
+基于 [VitePress](https://vitepress.dev) 构建的个人博客，使用 [easy-vitepress-blog](https://github.com/ZbWeR/easy-vitepress-blog) 主题。
 
 ## ✨ 特性
 
-- **🚀 自动化路由脚本**：新增 Markdown 文件时无需手动设置路由，构建脚本会自动为你处理，你可以更专注于内容创作。
-- **📚 语法增强**：新增 `LinkCard` 组件，以卡片形式清晰地展示链接，提升阅读体验。
-- **🎯 友好的 Friends 页面**：方便快捷地展示友情链接。
-- **🌹 定制的 Projects 页面**：展示你在开发生涯中完成的高质量开源项目。
-- **🎨 优化 PDF 导出效果**：使用 Tailwind CSS 调整打印模式下的样式，使你能够导出更加美观的 PDF 文件。
+- **📝 自动化路由**：在 `docs/src/Notes/` 下新增 Markdown 文件即可发布文章，无需手动配置路由。
+- **🌹 定制的 Friends 页面**：在 `docs/.vitepress/userConfig/friendsInfo.ts` 中配置友情链接。
+- **🦄 定制的 Projects 页面**：在 `docs/.vitepress/userConfig/projectsInfo.ts` 中配置开源项目。
+- **🎨 美观的 PDF 导出**：打印样式已优化，可导出精美的 PDF 文件。
 
-## 📋 开始
+## 🚀 本地开发
 
-[点击阅读使用指南](https://example.zbwer.work/)
+```bash
+npm install
+npm run docs:dev
+```
+
+## 📦 构建
+
+```bash
+npm run docs:build
+```
+
+## 📁 目录结构
+
+```
+docs
+├─ .vitepress
+│  ├─ components  # 自定义组件
+│  ├─ userConfig  # 用户数据：友链、项目
+│  └─ config.mjs  # VitePress 配置入口
+└─ src            # 站点内容
+   ├─ public      # 静态资源
+   ├─ Notes       # 博客文章（Markdown）
+   ├─ index.md    # 首页
+   ├─ AboutMe.md  # 关于页
+   ├─ Friends.md  # 友链页
+   └─ Projects.md # 项目页
+```
